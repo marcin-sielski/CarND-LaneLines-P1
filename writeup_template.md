@@ -35,34 +35,34 @@ My pipeline consisted of 8 steps as listed below:
 ![alt text][image1]
 * filter white and yellow color lanes,
 ![alt text][image2]
-* covert images to the grayscale,
+* convert images to the grayscale,
 ![alt text][image3]
 * smooth the images with Gaussian blur,
 ![alt text][image4]
 * detect edges with Canny algorithm,
 ![alt text][image5]
-* narrow the immages to the area of interest,
+* narrow detection to the area of interest,
 ![alt text][image6]
-* apply hough lines to the images,
+* apply hough lines and extrapolate them to left and right lines,
 ![alt text][image7]
-* convert resulted images from RGB to BGR and combine with orginal image
+* convert resulted images from RGB to BGR and combine with orginal images.
 ![alt text][image8]
 
 In order to draw a single line on the left and right lanes I have:
-* modified the draw_lines() function by filter out vertical lines and lines with inappropriate slopes (0.5 < | slope | < 0.8),
-* extrapolated all the detected lines in the image into single line,
-* averaged it with lines calculated for previous images if configured 
+* modified the draw_lines() function by filtering out vertical lines and lines with inappropriate slopes (valid 0.5 < | slope | < 0.8),
+* extrapolated all the detected lines in the image into single line on left and right side,
+* averaged the result with lines calculated for previous images if configured 
 
 ### 2. Identify potential shortcomings with your current pipeline
 
 
-One potential shortcoming would be what would happen when test data include images with blue lines used in some countries.
+One potential shortcoming would be what would happen when test data include images with blue lines used on the roads in some countries.
 
-Another shortcoming could be what would happen if the test data include images with sharp tunrs or intersections
+Another shortcoming could be what would happen if the test data include images with sharp tunrs or intersections.
 
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to filter blue lines.
+A possible improvement would be to filter blue lines in addition to white and yellow lines.
 
 Another potential improvement could be to potentially use Polynomial regression instead of straight lines.
