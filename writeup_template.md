@@ -51,7 +51,7 @@ My pipeline consisted of 8 steps as listed below:
 In order to draw a single line on the left and right lanes I have:
 * modified the draw_lines() function by filtering out vertical lines and lines with inappropriate slopes (valid 0.5 < | slope | < 0.8),
 * extrapolated all the detected lines in the image into single line on left and right side,
-* averaged the result with lines calculated for previous images if configured 
+* averaged the result with lines calculated for previous images if configured.
 
 ### 2. Identify potential shortcomings with your current pipeline
 
